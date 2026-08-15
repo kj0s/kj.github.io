@@ -1,18 +1,14 @@
-const pieces = document.querySelectorAll(".embroidery");
+const embroidery = document.querySelector(".embroidery-main");
 
 document.addEventListener("mousemove", (event) => {
 
-    const x = event.clientX / window.innerWidth - 0.5;
-    const y = event.clientY / window.innerHeight - 0.5;
+    const x =
+        (event.clientX / window.innerWidth - 0.5);
 
-    pieces.forEach((piece, index) => {
+    const y =
+        (event.clientY / window.innerHeight - 0.5);
 
-        const movement = (index + 1) * 8;
-
-        piece.style.transform =
-            `translate(${x * movement}px, ${y * movement}px)
-             rotate(${index === 0 ? 8 : -12}deg)`;
-
-    });
+    embroidery.style.transform =
+        `translate(${x * 12}px, ${y * 12}px) rotate(4deg)`;
 
 });
