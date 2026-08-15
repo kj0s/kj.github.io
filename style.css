@@ -441,7 +441,77 @@ h1 {
     min-height: 430px;
 
 }
+/* --------------------------------
+   FLOATING BOTANICALS
+-------------------------------- */
 
+.floating-botanical {
+
+    position: fixed;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    color: var(--leaf);
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size: 150px;
+
+    opacity: .35;
+
+}
+
+
+.botanical-left {
+
+    left: -45px;
+
+    top: 55%;
+
+    animation:
+        botanical-sway 10s ease-in-out infinite;
+
+}
+
+
+.botanical-right {
+
+    right: -45px;
+
+    top: 25%;
+
+    color: var(--gold);
+
+    animation:
+        botanical-sway 13s ease-in-out infinite reverse;
+
+}
+
+
+@keyframes botanical-sway {
+
+    0%,
+    100% {
+
+        transform:
+            rotate(-5deg)
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            rotate(5deg)
+            translateY(-15px);
+
+    }
+
+}
 
 /* individual fabric piece */
 
