@@ -1,1 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MOFA, But Make It Temporal — KJ</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../../style.css">
+
+</head>
+
+
+<body>
+
+<header>
+
+    <div class="label">
+        FIELD NOTES / CODE
+    </div>
+
+    <nav>
+
+        <a href="../../">
+            home
+        </a>
+
+        <a href="../">
+            cool code
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+    <article class="post">
+
+        <p class="kicker">
+            CODE NOTE 001 · 15 AUGUST 2026
+        </p>
+
+        <h1>
+            How best to use MOFA to model fate-time progression?
+        </h1>
+          <h2> 
+            <a
+        href="https://github.com/kj0s/hidden_regulators_barcoding"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        The code and experimentation used here
+    </a>.
+          </h2>
+        <p class="post-intro">
+    Using group structure and temporal covariates when modelling
+    multi-modal differentiation trajectories with MOFA2.
+</p>
+
+<div class="post-body">
+
+    <p>
+        <strong>Summary.</strong>
+        Multi-Omics Factor Analysis (MOFA) is useful for integrating
+        multiple molecular modalities measured across the same samples.
+        However, standard MOFA does not explicitly model temporal
+        relationships between observations. This becomes important when
+        studying differentiation trajectories, where measurements at
+        successive timepoints are biologically related rather than
+        independent! 
+    </p>
+
+    <p>
+        MOFA offers us two useful approaches to represent repeated trajectories:
+        MOFA2's multi-group functionality and, when temporal smoothness
+        is of interest, incorporate time explicitly using MEFISTO.
+        
+    </p>
+  <p>
+    Groups encode experimental or trajectory structure, whereas MEFISTO models variation 
+    as a function of a continuous covariate such as time.
+  </p>
+
+    <h2>
+        Problem
+    </h2>
+
+    <p>
+        Consider a progenitor population differentiating into cell types
+        A, B, and C over several timepoints. At each timepoint, multiple
+        modalities may be measured, for example RNA expression,
+        chromatin accessibility, and protein abundance.
+    </p>
+
+    <p>
+        Treating these observations as a single collection of independent
+        samples discards an important part of the experimental design:
+        measurements at adjacent timepoints belong to the same biological
+        trajectory.
+    </p>
+
+    <h2>
+        Recommended representation
+    </h2>
+
+    <p>
+        MOFA2 supports multiple groups, allowing variation to be modelled
+        across repeated experimental trajectories. A simplified data
+        structure might therefore look like:
+    </p>
+
+    <pre><code>
+sample       group       time
+cell_001     traj_01       0
+cell_002     traj_01       2
+cell_003     traj_01       4
+cell_004     traj_01       6
+
+cell_005     traj_02       0
+cell_006     traj_02       2
+cell_007     traj_02       4
+cell_008     traj_02       6
+    </code></pre>
+
+    <p>
+        This allows the model to distinguish variation that is shared
+        across trajectories from variation that is specific to an
+        individual group.
+    </p>
+
+    <h2>
+        Important distinction
+    </h2>
+
+    <p>
+        <strong>Groups are not equivalent to time.</strong>
+        Assigning samples to groups does not tell vanilla MOFA that
+        timepoint 4 follows timepoint 2, or that neighbouring timepoints
+        should have similar latent representations.
+    </p>
+
+    <p>
+        When the temporal ordering itself is biologically meaningful,
+        MEFISTO is the more appropriate extension. It allows latent
+        factors to vary smoothly with continuous covariates such as
+        developmental time.
+    </p>
+
+    <h2>
+        Practical recommendation
+    </h2>
+
+    <p>
+        For differentiation experiments, I would therefore treat
+        trajectory identity and developmental time as two separate pieces
+        of information. Use group structure to represent repeated
+        trajectories, and use an explicit temporal covariate when the
+        objective is to model smooth developmental dynamics.
+    </p>
+            <h2>
+                References
+            </h2>
+
+            <ol>
+
+                <li id="ref-1">
+                    MOFA2 documentation.
+                    <em>FAQ on the multi-group functionality.</em>
+                    Multi-Omics Factor Analysis.
+                    <a
+                        href="https://biofam.github.io/MOFA2/faq.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        biofam.github.io/MOFA2
+                    </a>.
+                </li>
+
+
+                <li id="ref-2">
+                    Velten B, Braunger JM, Argelaguet R, Arnol D,
+                    Wirbel J, Huber W, Stegle O.
+                    <em>
+                        Identifying temporal and spatial patterns of variation
+                        from multi-modal data using MEFISTO.
+                    </em>
+                    Nature Methods. 2022.
+                    <a
+                        href="https://biofam.github.io/MOFA2/MEFISTO.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        MEFISTO documentation
+                    </a>.
+                </li>
+
+            </ol>
+
+        </div>
+
+    </article>
+
+</main>
+
+
+<footer>
+
+    <span>FIELD NOTES</span>
+    <span>✦</span>
+    <span>KJ</span>
+
+</footer>
+
+</body>
+
+</html>
