@@ -88,9 +88,8 @@ header {
     align-items: center;
 
     background: rgba(23,25,20,.92);
-    backdrop-filter: blur(4px);
 
-    box-shadow: 0 0 0 100vmax rgba(23,25,20,.92);
+    backdrop-filter: blur(4px);
 }
 
 .label {
@@ -123,7 +122,6 @@ nav a:hover {
 /* --------------------------------
    DECORATIVE TOP THREAD
 -------------------------------- */
-
 
 .thread {
     position: absolute;
@@ -234,35 +232,6 @@ h1 {
 .code-page{
     background: #0a1d33
 }
-.about-bio {
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 30px;
-
-    margin-top: 40px;
-}
-
-.protein-gif {
-    width: 140px;
-    height: 140px;
-
-    object-fit: cover;
-
-    flex-shrink: 0;
-
-    box-shadow:
-        8px 10px 0 rgba(0,0,0,.2);
-}
-
-.about-bio p {
-    margin: 0;
-
-    color: #b8b69b;
-
-    line-height: 1.8;
-}
 
 /* --------------------------------
    BOTANICAL PLACEHOLDERS
@@ -292,55 +261,6 @@ h1 {
     bottom: 3%;
 
     color: var(--red);
-}
-
-/* protein motif */
-.protein-motif {
-    width: 160px;
-
-    margin-top: 60px;
-
-    opacity: .8;
-
-    animation:
-        protein-drift 14s ease-in-out infinite;
-}
-
-.protein-motif svg {
-    width: 100%;
-    height: auto;
-}
-
-.helix-strand {
-    fill: none;
-
-    stroke: var(--gold);
-    stroke-width: 2.5;
-    stroke-linecap: round;
-}
-
-.strand-b {
-    stroke: var(--leaf);
-    opacity: .75;
-}
-
-.helix-node {
-    fill: var(--red);
-}
-
-@keyframes protein-drift {
-    0%,
-    100% {
-        transform:
-            rotate(0deg)
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            rotate(2deg)
-            translateY(-10px);
-    }
 }
 
 
