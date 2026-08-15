@@ -10,7 +10,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>My First Post — KJ</title>
+    <title>That Protein is AI, Dude — KJ</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,39 +53,354 @@
     <article class="post">
 
         <p class="kicker">
-            FIELD NOTE 001 · 15 AUGUST 2026
+            FIELD NOTE 001 · 2 JUNE 2026
         </p>
 
         <h1>
-            My first post
+            That Protein is AI, Dude
         </h1>
 
         <p class="post-intro">
-            A little introduction to whatever
-            I'm thinking about here.
+            How an AI-generated fluorescent protein raises some surprisingly
+            strange questions about evolution, biology, and what it means
+            for a protein to work.
         </p>
 
 
         <div class="post-body">
 
             <p>
-                This is where the actual writing goes.
+                For decades, scientists used a glowing jellyfish protein
+                called Green Fluorescent Protein (GFP) to light up living
+                cells. This protein emits a bright green light when exposed
+                to UV light, and is used to visibly ‘tag’ cells for all sorts
+                of experiments. Then, researchers used AI to generate a
+                protein that serves the same function. And… it worked?
+                The resulting protein, esmGFP, is so different from known
+                natural fluorescent proteins that researchers compare the
+                gap between them to roughly half a billion years of evolution.
+                This protein is widely marketed as ‘AI simulating evolution’;
+                but how much evolution is actually happening here, how does
+                this work, and why is this being AI generated a big deal?
             </p>
 
+
             <p>
-                You can write as many paragraphs as
-                you like. Because this is just HTML,
-                you have complete control over the
-                structure.
+                Before this, evolution was the only protein designer we had.
+                A jellyfish glows because evolution happened to stumble onto
+                a protein called GFP that can absorb and emit light
+                <sup><a href="#ref-1">1</a></sup>.
+                Over millions of years, random mutations, that is, changes
+                in DNA, slightly altered proteins. Natural selection,
+                however, kept the versions that still worked. In the same
+                sense, biology uses trial and error to build things, and
+                nature keeps what works.
             </p>
+
+
+            <p>
+                This means every protein on earth is part of a gigantic,
+                evolutionary family tree. Scientists can compare proteins
+                by looking at sequence identity
+                <sup><a href="#ref-2">2</a></sup>
+                – the percentage of amino acids that match between two
+                proteins. Usually, closely related proteins have similar
+                sequences and similar functions. The farther apart two
+                proteins are evolutionarily, the more likely the chemistry
+                fails and the protein stops functioning entirely. If you try
+                to mutate or engineer a protein to match the function of a
+                very different, distantly related protein, the chemistry is
+                highly likely to fail. Because their sequences and structures
+                have drifted too far apart, you can't easily swap parts or
+                force them to interact without losing the necessary
+                biochemical function!
+            </p>
+
 
             <h2>
-                A smaller heading
+                Why proteins are so sensitive
             </h2>
 
+
             <p>
-                And then more writing.
+                Why? Proteins are unbelievably sensitive to shape. They are
+                made up of units called amino acids, and only work if they
+                fold into an extremely precise and stable 3D structure.
+                A few bad mutations can completely ruin the fold. Some
+                examples of this in humans are cystic fibrosis, Alzheimer's,
+                Sickle Cell Anaemia, and Huntington’s
+                <sup><a href="#ref-3">3</a></sup>.
             </p>
+
+
+            <p>
+                The model researchers used to generate this protein is called
+                ESM3
+                <sup><a href="#ref-4">4</a></sup>.
+                It was trained on enormous databases of natural proteins,
+                like a large language mode (LLM), but for biology. ChatGPT
+                predicts plausible next words. ESM3 predicts plausible amino
+                acids, structures and functions. Give it part of a protein
+                sequence and it can iteratively fill in the gaps, adjusting
+                the molecule until the chemistry and structure begin to make
+                sense together. One of these generated proteins is esmGFP!
+            </p>
+
+
+            <p>
+                Now this is when stuff starts getting really weird: esmGFP
+                shares around 58% sequence identity with the closest natural
+                fluorescent protein. In evolutionary terms, that is an enormous
+                gap. For context, you share 60% of your DNA with a banana
+                <sup><a href="#ref-5">5</a></sup>.
+                No, I’m not lying to you. This is an astonishing number, and
+                researchers estimate the difference could correspond to
+                roughly half a billion years of evolution.
+            </p>
+
+
+            <p>
+                After reading the frankly ridiculous 58% number, I immediately
+                thought that's weird. It is, in fact, comical to assume that
+                a machine that only has 58% of the parts of another would
+                behave in the same way. It's the same in biology. Normally
+                proteins that are this different are not expected to behave
+                in the same way. Proteins are incredibly dependent on
+                structure, and structure depends on sequence! Change too much
+                and the entire fold usually destabilises – the protein
+                misfolds, clumps together or just stops working.
+            </p>
+
+
+            <p>
+                The fact that esmGFP can glow is even weirder. Forgive the
+                ‘nerd talk’ that will take over the rest of the paragraph,
+                but glowing for a protein is not an easy feat. GFP glows
+                because part of the protein folds inward and creates a tiny
+                chemical structure called a chromophore
+                <sup><a href="#ref-6">6</a></sup>.
+                Inside this pocket, three amino acids – serine, tyrosine,
+                and glycine – react together to form a ring-like structure
+                capable of absorbing and emitting light. In other words, the
+                amino acids all need to be at the right angles, surrounding
+                proteins need to stabilise the structure, the fold has to
+                protect the chromatophore from the outside environment, and
+                more. A model, without simulating any atoms like a physics
+                engine, iteratively predicted something that works out.
+            </p>
+
+
+            <h2>
+                The black box
+            </h2>
+
+
+            <p>
+                This is fascinating because the AI model appears to have
+                internalised some of the deeper rules that connect protein
+                sequence to behaviour – rules that even biologists still
+                don’t fully understand. Moreover, scientists can explain
+                how esmGFP functions chemically. They can map the fold.
+                They can identify the chromophore. They can experimentally
+                confirm that the protein fluoresces. But they can’t explain
+                how artificial intelligence made it to this protein.
+            </p>
+
+
+            <p>
+                Inside models like ESM3, there's still a major interpretability
+                problem for scientists and biologists. The model learned from
+                huge amounts of biological data and somehow developed an
+                internal representation of what ‘working proteins’ look like;
+                however, that representation is mostly hidden from us. The
+                logic the model used to navigate this protein space and propose
+                sequences that evolution may never have encountered at all is
+                a black box
+                <sup><a href="#ref-7">7</a></sup>.
+                Maybe biology has a hidden schema where functional proteins
+                follow deeper statistical or geometric rules. A schema which
+                AI models can learn before we can clearly articulate it
+                ourselves.
+            </p>
+
+
+            <p>
+                Nature is an incredible engineer, but it's also deeply
+                conservative. Evolution does not search for the best possible
+                molecule, only whatever is good enough to survive right now.
+                If a protein helps an organism reproduce, it stays. If not,
+                it disappears. As a result, biology is full of accidents and
+                compromises. Proteins can be inefficient, unstable, or
+                bizarrely complex simply because evolution had no reason,
+                or no viable path, to improve them further.
+            </p>
+
+
+            <p>
+                AI hence creates a different approach to biological design.
+                Instead of searching nature for useful molecules, researchers
+                can generate proteins tailored to human needs: enzymes that
+                break down plastic, proteins that capture carbon more
+                efficiently, medicines aimed at specific targets, or even
+                synthetic underwater adhesives inspired by mussels and
+                barnacles
+                <sup><a href="#ref-8">8</a></sup>
+                (find the link to this incredibly cool project
+                <a href="#ref-8">here!</a>).
+            </p>
+
+
+            <h2>
+                What does this mean?
+            </h2>
+
+
+            <p>
+                The deepest implication of this discovery is philosophical;
+                life on earth is a sample size of one. This means everything
+                we call “biology” comes from the same evolutionary tree,
+                shaped by chance, constraint, and what was “good enough” to
+                survive. esmGFP works, even with a sequence drifted far from
+                known fluorescence proteins. Unsettlingly enough, maybe life
+                isn’t defined by specific molecules at all, but by the rules
+                that make those molecules work.
+            </p>
+
+
+            <p>
+                Thank you for reading and I hope I could convince you that
+                esmGFP matters beyond “AI made a glowing thing.” Check it
+                out and play with ESM yourself
+                <a href="https://www.evolutionaryscale.ai/" target="_blank" rel="noopener">
+                    here
+                </a>!
+            </p>
+
+
+            <hr>
+
+
+            <h2>
+                References
+            </h2>
+
+
+            <ol class="references">
+
+                <li id="ref-1">
+                    University of Queensland.
+                    <em>How the jellyfish revolutionised brain science.</em>
+                    2020.
+                    <a
+                        href="https://qbi.uq.edu.au/brain/nature-discovery/how-jellyfish-revolutionised-brain-science"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        qbi.uq.edu.au
+                    </a>
+                </li>
+
+
+                <li id="ref-2">
+                    RCSB Protein Data Bank.
+                    <em>Data P. Sequence Similarity Search.</em>
+                    2017.
+                    <a
+                        href="https://www.rcsb.org/docs/search-and-browse/advanced-search/sequence-similarity-search"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        rcsb.org
+                    </a>
+                </li>
+
+
+                <li id="ref-3">
+                    Valastyan JS, Lindquist S.
+                    <em>Mechanisms of protein-folding diseases at a glance.</em>
+                    Disease Models &amp; Mechanisms.
+                    2014;7(1):9–14.
+                    <a
+                        href="https://doi.org/10.1242/dmm.013474"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        doi:10.1242/dmm.013474
+                    </a>
+                </li>
+
+
+                <li id="ref-4">
+                    EvolutionaryScale.
+                    <em>Evolutionaryscale.ai.</em>
+                    2024.
+                    <a
+                        href="https://www.evolutionaryscale.ai/"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        evolutionaryscale.ai
+                    </a>
+                </li>
+
+
+                <li id="ref-5">
+                    Pfizer.
+                    <em>How Genetically Related Are We to Bananas?</em>
+                    Pfizer. 2022.
+                    <a
+                        href="https://www.pfizer.com/news/articles/how_genetically_related_are_we_to_bananas"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        pfizer.com
+                    </a>
+                </li>
+
+
+                <li id="ref-6">
+                    Craggs TD.
+                    <em>
+                        Green fluorescent protein: structure, folding and
+                        chromophore maturation.
+                    </em>
+                    Chemical Society Reviews.
+                    2009;38(10):2865.
+                    <a
+                        href="https://doi.org/10.1039/b903641p"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        doi:10.1039/b903641p
+                    </a>
+                </li>
+
+
+                <li id="ref-7">
+                    Kosinski M.
+                    <em>What is black box artificial intelligence (AI)?</em>
+                    IBM. 2024.
+                    <a
+                        href="https://www.ibm.com/think/topics/black-box-ai"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        ibm.com
+                    </a>
+                </li>
+
+
+                <li id="ref-8">
+                    Liao H, Hu S, Yang H, Wang L, Tanaka S, Takigawa I, et al.
+                    <em>
+                        Data-driven de novo design of super-adhesive hydrogels.
+                    </em>
+                    Nature.
+                    2025;644(8075):89–95.
+                    doi:10.1039/b903641p
+                </li>
+
+            </ol>
 
         </div>
 
