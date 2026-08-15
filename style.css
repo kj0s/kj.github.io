@@ -547,11 +547,11 @@ h1 {
 
 .label-writing {
 
-    left: 2%;
-
-    top: 40px;
-
     transform:
+        translate(
+            var(--mouse-x, 0px),
+            var(--mouse-y, 0px)
+        )
         rotate(-4deg);
 
 }
@@ -559,11 +559,11 @@ h1 {
 
 .label-art {
 
-    left: 36%;
-
-    top: 150px;
-
     transform:
+        translate(
+            var(--mouse-x, 0px),
+            var(--mouse-y, 0px)
+        )
         rotate(2.5deg);
 
 }
@@ -571,11 +571,11 @@ h1 {
 
 .label-code {
 
-    right: 1%;
-
-    top: 25px;
-
     transform:
+        translate(
+            var(--mouse-x, 0px),
+            var(--mouse-y, 0px)
+        )
         rotate(-2deg);
 
 }
