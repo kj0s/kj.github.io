@@ -97,6 +97,12 @@ header {
     letter-spacing: .15em;
     color: var(--gold);
 }
+.header-inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 nav {
     display: flex;
