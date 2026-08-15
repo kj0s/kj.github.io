@@ -1084,7 +1084,72 @@ footer {
             auto !important;
     }
 }
+/* --------------------------------
+   WRITING / POST PAGES
+-------------------------------- */
 
+.post {
+    width: min(750px, 85vw);
+
+    margin: auto;
+
+    padding: 130px 0 180px;
+}
+
+.post h1 {
+    font-size:
+        clamp(60px, 9vw, 120px);
+
+    line-height: .85;
+
+    margin:
+        30px 0 50px;
+}
+
+.post-intro {
+    max-width: 600px;
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size: 25px;
+
+    line-height: 1.4;
+
+    color:
+        var(--linen);
+}
+
+.post-body {
+    margin-top: 70px;
+
+    font-size: 14px;
+
+    line-height: 2;
+
+    color: #b8b69b;
+}
+
+.post-body h2 {
+    margin-top: 70px;
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    color:
+        var(--paper);
+}
+
+.post-body p {
+    margin:
+        0 0 30px;
+}
 
 /* --------------------------------
    MOBILE
