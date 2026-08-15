@@ -542,6 +542,27 @@ h1 {
 
 }
 
+.fabric-label::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 35px;
+    height: 60px;
+
+    bottom: -45px;
+    left: 30px;
+
+    border-left: 2px solid var(--red);
+
+    border-radius:
+        0 0 0 80%;
+
+    transform:
+        rotate(12deg);
+
+}
 
 /* make the three pieces imperfect */
 
