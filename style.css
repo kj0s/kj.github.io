@@ -222,6 +222,14 @@ h1 {
     color: #aaa98e;
 }
 
+/* COLOURS OF PAGES*/
+.writing-page {
+    background: #4f1d24;
+}
+
+.code-page{
+    background: #0a1d33
+}
 
 /* --------------------------------
    BOTANICAL PLACEHOLDERS
