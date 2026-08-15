@@ -126,6 +126,7 @@ nav a:hover {
    DECORATIVE TOP THREAD
 -------------------------------- */
 
+
 .thread {
     position: absolute;
 
@@ -234,6 +235,35 @@ h1 {
 
 .code-page{
     background: #0a1d33
+}
+.about-bio {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 30px;
+
+    margin-top: 40px;
+}
+
+.protein-gif {
+    width: 140px;
+    height: 140px;
+
+    object-fit: cover;
+
+    flex-shrink: 0;
+
+    box-shadow:
+        8px 10px 0 rgba(0,0,0,.2);
+}
+
+.about-bio p {
+    margin: 0;
+
+    color: #b8b69b;
+
+    line-height: 1.8;
 }
 
 /* --------------------------------
