@@ -46,3 +46,36 @@ document.addEventListener("mousemove", (event) => {
     });
 
 });
+
+const patches = document.querySelectorAll(
+    ".floating-patch"
+);
+
+
+document.addEventListener("mousemove", (event) => {
+
+    const x =
+        (event.clientX / window.innerWidth - 0.5);
+
+    const y =
+        (event.clientY / window.innerHeight - 0.5);
+
+
+    patches.forEach((patch, index) => {
+
+        const strength =
+            index === 0 ? 3 : 2;
+
+        patch.style.setProperty(
+            "--mouse-x",
+            `${x * strength}px`
+        );
+
+        patch.style.setProperty(
+            "--mouse-y",
+            `${y * strength}px`
+        );
+
+    });
+
+});
