@@ -77,6 +77,13 @@ header {
 
     z-index: 100;
 
+    width: 100%;
+
+    background: rgba(23,25,20,.92);
+    backdrop-filter: blur(4px);
+}
+
+.header-inner {
     width: min(1300px, 90vw);
 
     margin: auto;
@@ -86,10 +93,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    background: rgba(23,25,20,.92);
-
-    backdrop-filter: blur(4px);
 }
 
 .label {
@@ -261,6 +264,55 @@ h1 {
     bottom: 3%;
 
     color: var(--red);
+}
+
+/* protein motif */
+.protein-motif {
+    width: 160px;
+
+    margin-top: 60px;
+
+    opacity: .8;
+
+    animation:
+        protein-drift 14s ease-in-out infinite;
+}
+
+.protein-motif svg {
+    width: 100%;
+    height: auto;
+}
+
+.helix-strand {
+    fill: none;
+
+    stroke: var(--gold);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+}
+
+.strand-b {
+    stroke: var(--leaf);
+    opacity: .75;
+}
+
+.helix-node {
+    fill: var(--red);
+}
+
+@keyframes protein-drift {
+    0%,
+    100% {
+        transform:
+            rotate(0deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotate(2deg)
+            translateY(-10px);
+    }
 }
 
 
