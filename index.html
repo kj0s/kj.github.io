@@ -1,98 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Your Name</title>
+    <title>KJ — field notes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-    <div class="site">
+    <!-- decorative thread -->
+    <svg class="thread thread-top"
+         viewBox="0 0 600 150"
+         preserveAspectRatio="none">
 
-        <!-- Navigation -->
+        <path
+            d="M0,80 C100,20 150,130 260,65
+               S430,10 600,80"
+        />
+
+    </svg>
+
+
+    <header>
+
+        <div class="label">
+            FIELD NOTES / 2026
+        </div>
+
         <nav>
             <a href="#work">work</a>
             <a href="#about">about</a>
-            <a href="#contact">contact</a>
+            <a href="#links">elsewhere</a>
         </nav>
+
+    </header>
+
+
+    <main>
 
 
         <!-- HERO -->
-        <main class="hero">
 
-            <img
-                src="images/flower.png"
-                class="embroidery flower"
-                alt=""
-            >
+        <section class="hero">
 
-            <img
-                src="images/moth.png"
-                class="embroidery moth"
-                alt=""
-            >
+            <div class="hero-copy">
 
-            <div class="hero-text">
-                <p class="eyebrow">welcome to my little corner of the internet</p>
+                <p class="kicker">
+                    writer · artist · programmer
+                </p>
 
                 <h1>
-                    Your<br>
-                    Name
+                    YOUR<br>
+                    NAME
                 </h1>
 
-                <p class="intro">
-                    Designer / artist / writer / whatever you are.
+                <p class="description">
+                    Things I've written, made, coded,
+                    noticed, and occasionally broken.
                 </p>
+
             </div>
 
-            <div class="thread thread-one"></div>
 
-        </main>
+            <!-- embroidery -->
+
+            <div class="embroidery embroidery-main">
+
+                <img
+                    src="images/embroidery.jpg"
+                    alt=""
+                >
+
+                <span class="pin"></span>
+
+            </div>
+
+
+            <!-- floating botanical -->
+
+            <div class="botanical botanical-one">
+                ✦
+            </div>
+
+            <div class="botanical botanical-two">
+                ❋
+            </div>
+
+
+        </section>
+
 
 
         <!-- WORK -->
+
         <section id="work" class="work">
 
-            <div class="section-title">
-                <span>✦</span>
-                <h2>Selected work</h2>
-                <span>✦</span>
+            <div class="section-heading">
+
+                <span>01</span>
+
+                <h2>
+                    things I've made
+                </h2>
+
             </div>
 
-            <div class="work-grid">
 
-                <article class="piece piece-one">
-                    <img src="images/flower.png" alt="Description of work">
-                    <h3>Project One</h3>
-                    <p>A little description of the project.</p>
-                </article>
+            <div class="links">
 
-                <article class="piece piece-two">
-                    <img src="images/moth.png" alt="Description of work">
-                    <h3>Project Two</h3>
-                    <p>Another little description.</p>
-                </article>
+
+                <a
+                    class="work-link"
+                    href="YOUR-BLOG-URL"
+                >
+
+                    <span class="number">
+                        01
+                    </span>
+
+                    <span class="work-title">
+                        writing
+                    </span>
+
+                    <span class="work-description">
+                        essays, notes, unfinished thoughts
+                    </span>
+
+                    <span class="arrow">
+                        ↗
+                    </span>
+
+                </a>
+
+
+
+                <a
+                    class="work-link"
+                    href="YOUR-ART-URL"
+                >
+
+                    <span class="number">
+                        02
+                    </span>
+
+                    <span class="work-title">
+                        art
+                    </span>
+
+                    <span class="work-description">
+                        images, experiments, strange objects
+                    </span>
+
+                    <span class="arrow">
+                        ↗
+                    </span>
+
+                </a>
+
+
+
+                <a
+                    class="work-link"
+                    href="YOUR-CODE-URL"
+                >
+
+                    <span class="number">
+                        03
+                    </span>
+
+                    <span class="work-title">
+                        code
+                    </span>
+
+                    <span class="work-description">
+                        software, experiments, digital things
+                    </span>
+
+                    <span class="arrow">
+                        ↗
+                    </span>
+
+                </a>
+
 
             </div>
 
         </section>
 
 
+
         <!-- ABOUT -->
+
         <section id="about" class="about">
 
-            <div class="stitched-box">
+            <div class="about-image">
 
-                <p class="eyebrow">a little about me</p>
+                <img
+                    src="images/embroidery-2.jpg"
+                    alt=""
+                >
+
+            </div>
+
+
+            <div class="about-text">
+
+                <p class="kicker">
+                    FIELD NOTE 002
+                </p>
+
+                <h2>
+                    A small
+                    collection
+                    of things.
+                </h2>
 
                 <p>
-                    Write whatever you want people to know about you here.
-                    This could be short, strange, funny, serious — whatever
-                    fits the personality of the site.
+                    I'm interested in [your interests here].
+                    This is where I keep the things that don't
+                    quite belong anywhere else.
                 </p>
 
             </div>
@@ -100,25 +239,67 @@
         </section>
 
 
-        <!-- CONTACT -->
-        <section id="contact" class="contact">
 
-            <h2>Say hello</h2>
+        <!-- LINKS -->
 
-            <a href="mailto:you@example.com">
-                you@example.com
-            </a>
+        <section id="links" class="elsewhere">
+
+            <p class="kicker">
+                ELSEWHERE
+            </p>
+
+            <h2>
+                Find me in other places.
+            </h2>
+
+
+            <div class="elsewhere-links">
+
+                <a href="YOUR-BLOG-URL">
+                    blog
+                </a>
+
+                <a href="YOUR-GITHUB-URL">
+                    github
+                </a>
+
+                <a href="YOUR-CODE-SITE">
+                    code
+                </a>
+
+                <a href="YOUR-OTHER-LINK">
+                    other
+                </a>
+
+            </div>
 
         </section>
 
 
-        <footer>
-            <p>made with thread & stubbornness ✦</p>
-        </footer>
 
-    </div>
+    </main>
+
+
+
+    <footer>
+
+        <span>
+            stitched together by hand
+        </span>
+
+        <span>
+            ✦
+        </span>
+
+        <span>
+            KJ
+        </span>
+
+    </footer>
+
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
