@@ -1,5 +1,4 @@
 :root {
-
     --night: #171914;
     --moss: #293227;
     --leaf: #667054;
@@ -9,41 +8,25 @@
 
     --linen: #d8cbaa;
     --paper: #e8dec2;
-
 }
 
+
+/* --------------------------------
+   RESET
+-------------------------------- */
 
 * {
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-header {
-
-    position: sticky;
-
-    top: 0;
-
-    z-index: 100;
-
-    background:
-        rgba(23,25,20,.92);
-
-    backdrop-filter:
-        blur(4px);
-
-}
-
 body {
-
     margin: 0;
 
     background: var(--night);
-
     color: var(--paper);
 
     font-family:
@@ -51,28 +34,24 @@ body {
         monospace;
 
     overflow-x: hidden;
-
 }
 
 
-/* subtle cloth grain */
+/* subtle woven texture */
 
 body::before {
-
     content: "";
 
     position: fixed;
-
     inset: 0;
 
     pointer-events: none;
 
     opacity: .12;
 
-    z-index: 20;
+    z-index: 50;
 
     background-image:
-
         repeating-linear-gradient(
             90deg,
             transparent 0px,
@@ -86,7 +65,6 @@ body::before {
             transparent 3px,
             rgba(220,210,170,.08) 4px
         );
-
 }
 
 
@@ -95,129 +73,66 @@ body::before {
 -------------------------------- */
 
 header {
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
 
     width: min(1300px, 90vw);
 
     margin: auto;
 
-    padding: 35px 0;
+    padding: 28px 0;
 
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 
-}
+    background: rgba(23,25,20,.92);
 
+    backdrop-filter: blur(4px);
+}
 
 .label {
-
     font-size: 11px;
-
     letter-spacing: .15em;
-
     color: var(--gold);
-
 }
-
 
 nav {
-
     display: flex;
-
     gap: 30px;
-
 }
 
-
 nav a {
-
     color: var(--paper);
 
     text-decoration: none;
 
     font-size: 12px;
 
-    transition: color .2s;
-
+    transition:
+        color .2s ease;
 }
-
 
 nav a:hover {
-
     color: var(--gold);
-
 }
 
-
-@media (max-width: 750px) {
-
-    .collection {
-
-        min-height: auto;
-
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 40px;
-
-    }
-
-
-    .collection-piece {
-
-        position: relative;
-
-        width: 100%;
-
-        left: auto;
-        right: auto;
-        top: auto;
-
-        min-height: 280px;
-
-    }
-
-
-    .writing-piece,
-    .art-piece,
-    .code-piece {
-
-        transform: none;
-
-    }
-
-
-    .writing-piece:hover,
-    .art-piece:hover,
-    .code-piece:hover {
-
-        transform:
-            translateY(-8px);
-
-    }
-
-}
 
 /* --------------------------------
-   THREAD
+   DECORATIVE TOP THREAD
 -------------------------------- */
 
 .thread {
-
     position: absolute;
 
     pointer-events: none;
 
     z-index: 1;
-
 }
 
-
 .thread path {
-
     fill: none;
 
     stroke: var(--red);
@@ -225,33 +140,24 @@ nav a:hover {
     stroke-width: 2;
 
     stroke-dasharray: 1000;
-
     stroke-dashoffset: 1000;
 
-    animation: stitch 4s ease forwards;
-
+    animation:
+        stitch 4s ease forwards;
 }
 
-
 .thread-top {
-
     width: 50vw;
 
     right: 0;
-
     top: 120px;
-
 }
 
-
 @keyframes stitch {
-
     to {
         stroke-dashoffset: 0;
     }
-
 }
-
 
 
 /* --------------------------------
@@ -259,7 +165,6 @@ nav a:hover {
 -------------------------------- */
 
 .hero {
-
     position: relative;
 
     min-height: 90vh;
@@ -269,252 +174,18 @@ nav a:hover {
     margin: auto;
 
     display: flex;
-
     align-items: center;
-
 }
 
-
 .hero-copy {
-
     position: relative;
 
     z-index: 5;
 
     width: 55%;
-
-}
-.collection {
-
-    position: relative;
-
-    margin-top: 70px;
-
-    min-height: 900px;
-
-}
-
-
-.collection-piece {
-
-    position: absolute;
-
-    width: 340px;
-
-    min-height: 300px;
-
-    padding: 45px;
-
-    text-decoration: none;
-
-    color: var(--night);
-
-    background: var(--linen);
-
-    box-shadow:
-        12px 15px 0 rgba(0,0,0,.2);
-
-    border: 1px solid rgba(50,45,30,.25);
-
-    transition:
-        transform .4s ease,
-        box-shadow .4s ease;
-
-}
-
-
-/* stitched edge */
-
-.collection-piece::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 10px;
-
-    border: 2px dashed var(--red);
-
-    pointer-events: none;
-
-}
-
-
-/* individual positions */
-
-.writing-piece {
-
-    left: 3%;
-
-    top: 30px;
-
-    transform: rotate(-4deg);
-
-}
-
-
-.art-piece {
-
-    right: 5%;
-
-    top: 270px;
-
-    transform: rotate(3deg);
-
-    background: #c6c9ad;
-
-}
-
-
-.code-piece {
-
-    left: 25%;
-
-    top: 560px;
-
-    transform: rotate(-2deg);
-
-    background: #b7a778;
-
-}
-.piece-label {
-
-    display: block;
-
-    position: relative;
-
-    margin-bottom: 35px;
-
-    font-size: 10px;
-
-    letter-spacing: .15em;
-
-    color: var(--red);
-
-}
-
-
-.collection-piece h3 {
-
-    position: relative;
-
-    font-family:
-        "DM Serif Display",
-        serif;
-
-    font-size: 55px;
-
-    font-weight: 400;
-
-    margin: 0 0 20px;
-
-}
-
-
-.collection-piece p {
-
-    position: relative;
-
-    max-width: 240px;
-
-    font-size: 12px;
-
-    line-height: 1.8;
-
-    color: #5f5c4b;
-
-}
-
-
-.piece-action {
-
-    position: relative;
-
-    display: block;
-
-    margin-top: 30px;
-
-    color: var(--red);
-
-    font-size: 11px;
-
-}
-.collection-piece:hover {
-
-    z-index: 10;
-
-    box-shadow:
-        20px 25px 0 rgba(0,0,0,.3);
-
-}
-
-
-.writing-piece:hover {
-
-    transform:
-        rotate(-1deg)
-        translateY(-15px);
-
-}
-
-
-.art-piece:hover {
-
-    transform:
-        rotate(5deg)
-        translateY(-15px);
-
-}
-
-
-.code-piece:hover {
-
-    transform:
-        rotate(-4deg)
-        translateY(-15px);
-
-}
-.work {
-    background: var(--paper);
-
-    color: var(--night);
-
-    margin-left: -5vw;
-    margin-right: -5vw;
-
-    padding-left: 5vw;
-    padding-right: 5vw;
-}
-.about {
-    background:
-        #293227;
-
-    position: relative;
-}
-.work::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    opacity: .15;
-
-    background:
-        repeating-linear-gradient(
-            0deg,
-            transparent 0px,
-            transparent 4px,
-            rgba(80,60,30,.15) 5px
-        );
-
 }
 
 .kicker {
-
     font-size: 11px;
 
     letter-spacing: .16em;
@@ -522,19 +193,18 @@ nav a:hover {
     text-transform: uppercase;
 
     color: var(--gold);
-
 }
 
-
 h1 {
-
     font-family:
         "Fraunces",
+        "DM Serif Display",
         serif;
 
     font-weight: 400;
 
-    font-size: clamp(90px, 14vw, 210px);
+    font-size:
+        clamp(90px, 14vw, 210px);
 
     line-height: .72;
 
@@ -543,131 +213,22 @@ h1 {
     margin: 35px 0;
 
     color: var(--paper);
-
 }
 
-
 .description {
-
     max-width: 400px;
 
     line-height: 1.8;
 
     color: #aaa98e;
-
 }
-
 
 
 /* --------------------------------
-   EMBROIDERY
--------------------------------- */
-
-.embroidery-main {
-
-    position: absolute;
-
-    width: 420px;
-
-    height: 560px;
-
-    right: 4%;
-
-    top: 12%;
-
-    transform: rotate(4deg);
-
-    z-index: 3;
-
-}
-
-
-.embroidery-main img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    object-position: center;
-
-    filter:
-        sepia(.3)
-        contrast(1.1);
-
-    border-radius: 3px;
-
-    box-shadow:
-
-        10px 15px 0 rgba(0,0,0,.25);
-
-}
-.floating-patch {
-    position: absolute;
-    pointer-events: none;
-    z-index: 1;
-
-    filter:
-        drop-shadow(7px 10px 0 rgba(0,0,0,.25));
-
-    transition:
-        transform .5s ease;
-}
-
-.patch-left {
-    width: 240px;
-
-    right: 3%;
-    top: 35%;
-
-    transform: rotate(7deg);
-
-    animation:
-        patch-sway-left 10s ease-in-out infinite;
-}
-
-.patch-right {
-    width: 180px;
-
-    left: 4%;
-    top: 70%;
-
-    transform: rotate(-8deg);
-
-    animation:
-        patch-sway-right 13s ease-in-out infinite;
-}
-
-
-/* little wooden pin */
-
-.pin {
-
-    position: absolute;
-
-    width: 12px;
-
-    height: 12px;
-
-    border-radius: 50%;
-
-    background: var(--gold);
-
-    top: -8px;
-
-    left: 50%;
-
-}
-
-
-
-/* --------------------------------
-   BOTANICAL SYMBOLS
+   BOTANICAL PLACEHOLDERS
 -------------------------------- */
 
 .botanical {
-
     position: absolute;
 
     color: var(--leaf);
@@ -676,35 +237,104 @@ h1 {
 
     z-index: 2;
 
-}
+    pointer-events: none;
 
+    opacity: .7;
+}
 
 .botanical-one {
-
     left: 0;
-
     bottom: 12%;
-
 }
 
-
 .botanical-two {
-
     right: 0;
-
     bottom: 3%;
 
     color: var(--red);
-
 }
 
 
+/* --------------------------------
+   PATCHWORK
+-------------------------------- */
+
+/*
+   These are section decorations rather
+   than fixed objects.
+
+   This means they move with the page
+   and don't make the whole site feel static.
+*/
+
+.floating-patch {
+    position: absolute;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+    filter:
+        drop-shadow(
+            8px 12px 0 rgba(0,0,0,.25)
+        );
+}
+
+.floating-patch img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+/* HERO PATCHWORK 1 */
+
+.hero-patch {
+    width: 270px;
+
+    right: 7%;
+    top: 25%;
+
+    transform: rotate(7deg);
+
+    animation:
+        hero-patch-float 9s ease-in-out infinite;
+}
+
+.hero-patch::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 5px;
+
+    border: 2px dashed
+        rgba(184,146,80,.7);
+}
+
+@keyframes hero-patch-float {
+    0%,
+    100% {
+        transform:
+            rotate(7deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotate(4deg)
+            translateY(-10px);
+    }
+}
+
 
 /* --------------------------------
-   WORK
+   WORK SECTION
 -------------------------------- */
 
 .work {
+    position: relative;
 
     width: min(1100px, 85vw);
 
@@ -712,35 +342,86 @@ h1 {
 
     padding: 150px 0;
 
+    color: var(--night);
 }
 
 
-.section-heading {
+/*
+   A paper/fabric sheet behind
+   the entire work section.
+*/
 
+.work::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: -1;
+
+    left: -10vw;
+    right: -10vw;
+
+    top: 0;
+    bottom: 0;
+
+    background:
+        var(--paper);
+
+    opacity: .98;
+}
+
+
+/* subtle paper grain */
+
+.work::after {
+    content: "";
+
+    position: absolute;
+
+    z-index: -1;
+
+    left: -10vw;
+    right: -10vw;
+
+    top: 0;
+    bottom: 0;
+
+    pointer-events: none;
+
+    opacity: .12;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 5px,
+            rgba(70,50,25,.12) 6px
+        );
+}
+
+
+/* heading */
+
+.section-heading {
     display: flex;
 
     align-items: baseline;
 
     gap: 25px;
 
-    border-bottom: 1px solid #41443a;
+    border-bottom:
+        1px solid #41443a;
 
     padding-bottom: 20px;
-
 }
 
-
 .section-heading span {
-
     color: var(--gold);
 
     font-size: 12px;
-
 }
 
-
 .section-heading h2 {
-
     font-family:
         "DM Serif Display",
         serif;
@@ -750,206 +431,216 @@ h1 {
     font-weight: 400;
 
     margin: 0;
-
 }
 
 
 /* --------------------------------
-   EMBROIDERED FABRIC LABELS
+   WORK PATCHWORK
 -------------------------------- */
 
-.links {
+.work-patch {
+    width: 170px;
 
-    position: relative;
+    position: absolute;
 
-    margin-top: 80px;
+    right: -60px;
+    top: 80px;
 
-    min-height: 430px;
-
-}
-/* --------------------------------
-   FLOATING PATCHWORK
--------------------------------- */
-
-.floating-patch {
-
-    position: fixed;
-
-    pointer-events: none;
-
-    z-index: 2;
-
-    width: 180px;
-
-    filter:
-        drop-shadow(8px 12px 0 rgba(0, 0, 0, .25));
+    transform: rotate(9deg);
 
     animation:
-        patch-drift 9s ease-in-out infinite;
-
+        work-patch-float 11s ease-in-out infinite;
 }
 
-
-.floating-patch img {
-
-    display: block;
-
-    width: 100%;
-
-    height: auto;
-
-}
-
-
-/* LEFT PIECE */
-
-.patch-left {
-
-    left: -30px;
-
-    top: 55%;
-
-    transform: rotate(-8deg);
-
-    animation-delay: -2s;
-
-}
-
-
-/* RIGHT PIECE */
-
-.patch-right {
-
-    right: -35px;
-
-    top: 28%;
-
-    width: 210px;
-
-    transform: rotate(7deg);
-
-    animation-delay: -5s;
-
-}
-
-
-/* SMALLER PIECE */
-
-.patch-small {
-
-    right: 18%;
-
-    top: 70%;
-
-    width: 110px;
-
-    transform: rotate(-12deg);
-
-    animation-delay: -7s;
-
-}
-
-
-@keyframes patch-drift {
-
-    0%,
-    100% {
-
-        translate: 0 0;
-
-    }
-
-    50% {
-
-        translate: 5px -12px;
-
-    }
-
-}
-.floating-patch::after {
-
+.work-patch::after {
     content: "";
 
     position: absolute;
 
-    inset: 6px;
+    inset: 5px;
 
-    border: 2px dashed rgba(184, 146, 80, .75);
-
-    pointer-events: none;
-
+    border: 2px dashed
+        rgba(135,61,53,.7);
 }
 
-/* FLOATING PATCHES */
-
-.patch-left {
-    animation:
-        patch-sway 11s ease-in-out infinite;
-}
-.patch-small {
-    animation:
-        patch-drift 7s ease-in-out infinite;
-}
-.patch-right {
-    animation:
-        patch-rotate 14s ease-in-out infinite;
-}
-@keyframes patch-sway {
-
-    0%, 100% {
-        transform: rotate(-8deg) translateY(0);
+@keyframes work-patch-float {
+    0%,
+    100% {
+        transform:
+            rotate(9deg)
+            translateY(0);
     }
 
     50% {
-        transform: rotate(-5deg) translateY(-10px);
+        transform:
+            rotate(6deg)
+            translateY(8px);
     }
-
 }
 
 
-@keyframes patch-rotate {
+/* --------------------------------
+   WORK NAVIGATION
+-------------------------------- */
 
-    0%, 100% {
-        transform: rotate(7deg);
-    }
+/*
+   The three links are deliberately
+   staggered, but they remain an obvious
+   vertical navigation system.
+*/
 
-    50% {
-        transform: rotate(10deg);
-    }
+.links {
+    position: relative;
 
+    margin-top: 75px;
+
+    min-height: 760px;
 }
 
-/* individual fabric piece */
+
+/* --------------------------------
+   FABRIC LABEL
+-------------------------------- */
 
 .fabric-label {
-
     position: absolute;
 
     display: block;
 
-    width: 310px;
+    width: 340px;
 
-    min-height: 210px;
+    min-height: 230px;
 
-    padding: 35px;
-
-    background: var(--linen);
+    padding: 38px;
 
     color: var(--night);
 
     text-decoration: none;
 
     box-shadow:
-        12px 15px 0 rgba(0, 0, 0, .22);
+        12px 15px 0 rgba(0,0,0,.22);
+
+    border: 1px solid
+        rgba(50,45,30,.25);
+
+    transform-origin: 50% 10%;
 
     transition:
-        transform .45s cubic-bezier(.2,.8,.2,1),
-        box-shadow .45s ease;
-
+        transform .4s ease,
+        box-shadow .4s ease;
 }
 
-.fabric-label::after {
 
+/* different fabrics */
+
+.label-writing {
+    left: 2%;
+    top: 20px;
+
+    background:
+        var(--linen);
+
+    transform: rotate(-4deg);
+
+    animation:
+        label-writing-float 8s ease-in-out infinite;
+}
+
+.label-art {
+    right: 4%;
+    top: 260px;
+
+    background:
+        #c6c9ad;
+
+    transform: rotate(3deg);
+
+    animation:
+        label-art-float 10s ease-in-out infinite;
+}
+
+.label-code {
+    left: 22%;
+    top: 520px;
+
+    background:
+        #b7a778;
+
+    transform: rotate(-2deg);
+
+    animation:
+        label-code-float 9s ease-in-out infinite;
+}
+
+
+/* --------------------------------
+   LABEL STITCHING
+-------------------------------- */
+
+.label-stitch {
+    position: absolute;
+
+    pointer-events: none;
+
+    opacity: .85;
+}
+
+
+/* top + bottom */
+
+.stitch-top,
+.stitch-bottom {
+    left: 12px;
+    right: 12px;
+
+    height: 2px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            var(--red) 0 8px,
+            transparent 8px 13px
+        );
+}
+
+.stitch-top {
+    top: 9px;
+}
+
+.stitch-bottom {
+    bottom: 9px;
+}
+
+
+/* left + right */
+
+.stitch-left,
+.stitch-right {
+    top: 12px;
+    bottom: 12px;
+
+    width: 2px;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            var(--red) 0 8px,
+            transparent 8px 13px
+        );
+}
+
+.stitch-left {
+    left: 9px;
+}
+
+.stitch-right {
+    right: 9px;
+}
+
+
+/* loose thread from label */
+
+.fabric-label::after {
     content: "";
 
     position: absolute;
@@ -960,155 +651,22 @@ h1 {
     bottom: -45px;
     left: 30px;
 
-    border-left: 2px solid var(--red);
+    border-left:
+        2px solid var(--red);
 
     border-radius:
         0 0 0 80%;
 
     transform:
         rotate(12deg);
-
-}
-
-/* make the three pieces imperfect */
-
-.label-writing {
-
-    transform:
-        translate(
-            var(--mouse-x, 0px),
-            var(--mouse-y, 0px)
-        )
-        rotate(-4deg);
-
-}
-
-
-.label-art {
-
-    transform:
-        translate(
-            var(--mouse-x, 0px),
-            var(--mouse-y, 0px)
-        )
-        rotate(2.5deg);
-
-}
-
-
-.label-code {
-
-    transform:
-        translate(
-            var(--mouse-x, 0px),
-            var(--mouse-y, 0px)
-        )
-        rotate(-2deg);
-
 }
 
 
 /* --------------------------------
-   STITCHED EDGES
--------------------------------- */
-
-.label-stitch {
-
-    position: absolute;
-
-    pointer-events: none;
-
-    opacity: .8;
-
-}
-
-
-/* top */
-
-.stitch-top {
-
-    left: 12px;
-    right: 12px;
-    top: 9px;
-
-    height: 2px;
-
-    background:
-        repeating-linear-gradient(
-            90deg,
-            var(--red) 0 8px,
-            transparent 8px 13px
-        );
-
-}
-
-
-/* bottom */
-
-.stitch-bottom {
-
-    left: 12px;
-    right: 12px;
-    bottom: 9px;
-
-    height: 2px;
-
-    background:
-        repeating-linear-gradient(
-            90deg,
-            var(--red) 0 8px,
-            transparent 8px 13px
-        );
-
-}
-
-
-/* left */
-
-.stitch-left {
-
-    top: 12px;
-    bottom: 12px;
-    left: 9px;
-
-    width: 2px;
-
-    background:
-        repeating-linear-gradient(
-            0deg,
-            var(--red) 0 8px,
-            transparent 8px 13px
-        );
-
-}
-
-
-/* right */
-
-.stitch-right {
-
-    top: 12px;
-    bottom: 12px;
-    right: 9px;
-
-    width: 2px;
-
-    background:
-        repeating-linear-gradient(
-            0deg,
-            var(--red) 0 8px,
-            transparent 8px 13px
-        );
-
-}
-
-
-/* --------------------------------
-   LABEL CONTENT
+   LABEL TEXT
 -------------------------------- */
 
 .label-number {
-
     display: block;
 
     margin-bottom: 20px;
@@ -1118,12 +676,9 @@ h1 {
     letter-spacing: .15em;
 
     color: var(--red);
-
 }
 
-
 .label-title {
-
     display: block;
 
     font-family:
@@ -1135,25 +690,21 @@ h1 {
     line-height: .9;
 
     margin-bottom: 18px;
-
 }
 
-
 .label-description {
-
     display: block;
+
+    max-width: 230px;
 
     color: #68624f;
 
     font-size: 11px;
 
     line-height: 1.6;
-
 }
 
-
 .label-arrow {
-
     position: absolute;
 
     right: 30px;
@@ -1165,137 +716,155 @@ h1 {
 
     transition:
         transform .3s ease;
-
 }
 
 
 /* --------------------------------
-   HOVER
+   LABEL MOVEMENT
 -------------------------------- */
 
-.fabric-label:hover {
+@keyframes label-writing-float {
+    0%,
+    100% {
+        transform:
+            rotate(-4deg)
+            translateY(0);
+    }
 
+    50% {
+        transform:
+            rotate(-3deg)
+            translateY(4px);
+    }
+}
+
+@keyframes label-art-float {
+    0%,
+    100% {
+        transform:
+            rotate(3deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotate(4deg)
+            translateY(-5px);
+    }
+}
+
+@keyframes label-code-float {
+    0%,
+    100% {
+        transform:
+            rotate(-2deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotate(-3deg)
+            translateY(5px);
+    }
+}
+
+
+/* hover */
+
+.fabric-label:hover {
     z-index: 10;
 
     box-shadow:
-        18px 24px 0 rgba(0, 0, 0, .28);
-
+        20px 25px 0 rgba(0,0,0,.3);
 }
-
-
-/* each one has its own movement */
 
 .label-writing:hover {
-
     transform:
         rotate(-1deg)
-        translateY(-12px)
-        translateX(5px);
-
+        translateY(-12px);
 }
-
 
 .label-art:hover {
-
     transform:
-        rotate(4deg)
-        translateY(-15px);
-
+        rotate(5deg)
+        translateY(-12px);
 }
-
 
 .label-code:hover {
-
     transform:
-        rotate(-5deg)
-        translateY(-10px)
-        translateX(-5px);
-
+        rotate(-4deg)
+        translateY(-12px);
 }
-
 
 .fabric-label:hover .label-arrow {
-
     transform:
-        translate(8px, -8px)
+        translate(8px,-8px)
         rotate(-5deg);
-
 }
 
 
-.work-link {
+/* --------------------------------
+   THREADS BETWEEN WORK LABELS
+-------------------------------- */
 
-    position: relative;
+.label-threads {
+    position: absolute;
 
-    display: grid;
+    width: 100%;
 
-    grid-template-columns:
-        70px
-        220px
-        1fr
-        50px;
+    height: 760px;
 
-    align-items: center;
+    left: 0;
+    top: 0;
 
-    padding: 35px 10px;
+    pointer-events: none;
 
-    border-bottom: 1px solid #34372f;
-
-    color: var(--paper);
-
-    text-decoration: none;
-
-    transition:
-        padding .3s,
-        color .3s;
-
+    z-index: 0;
 }
 
+.thread-path {
+    fill: none;
 
-.work-link:hover {
+    stroke:
+        var(--red);
 
-    padding-left: 30px;
+    stroke-width: 2;
 
-    color: var(--gold);
+    stroke-linecap: round;
 
+    opacity: .7;
+
+    stroke-dasharray: 6 7;
+
+    animation:
+        thread-drift 8s ease-in-out infinite;
 }
 
+.thread-b {
+    stroke:
+        var(--gold);
 
-.number {
-
-    color: var(--gold);
-
-    font-size: 12px;
-
+    animation-delay:
+        -2s;
 }
 
-
-.work-title {
-
-    font-family:
-        "DM Serif Display",
-        serif;
-
-    font-size: 32px;
-
+.thread-c {
+    animation-delay:
+        -5s;
 }
 
+@keyframes thread-drift {
+    0%,
+    100% {
+        transform:
+            translate(0,0);
+    }
 
-.work-description {
-
-    color: #898b77;
-
-    font-size: 12px;
-
+    50% {
+        transform:
+            translate(3px,-5px);
+    }
 }
-
-
-.arrow {
-
-    font-size: 25px;
-
-}
-
 
 
 /* --------------------------------
@@ -1303,51 +872,46 @@ h1 {
 -------------------------------- */
 
 .about {
+    position: relative;
 
     min-height: 80vh;
 
-    background: var(--moss);
+    background:
+        var(--moss);
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
     align-items: center;
 
     gap: 80px;
 
     padding: 100px 10vw;
-
 }
-
 
 .about-image {
-
-    transform: rotate(-3deg);
-
+    transform:
+        rotate(-3deg);
 }
 
-
 .about-image img {
-
     width: 100%;
 
     max-height: 600px;
 
     object-fit: cover;
 
+    box-shadow:
+        10px 14px 0 rgba(0,0,0,.2);
 }
-
 
 .about-text {
-
     max-width: 500px;
-
 }
 
-
 .about-text h2 {
-
     font-family:
         "DM Serif Display",
         serif;
@@ -1357,18 +921,13 @@ h1 {
     font-size: 70px;
 
     line-height: .9;
-
 }
 
-
 .about-text p:not(.kicker) {
-
     color: #b8b69b;
 
     line-height: 1.8;
-
 }
-
 
 
 /* --------------------------------
@@ -1376,6 +935,7 @@ h1 {
 -------------------------------- */
 
 .elsewhere {
+    position: relative;
 
     min-height: 70vh;
 
@@ -1384,192 +944,100 @@ h1 {
     margin: auto;
 
     padding: 150px 0;
-
 }
 
-
 .elsewhere h2 {
-
     font-family:
         "DM Serif Display",
         serif;
 
     font-weight: 400;
 
-    font-size: clamp(50px, 8vw, 100px);
+    font-size:
+        clamp(50px, 8vw, 100px);
 
     line-height: .9;
 
     max-width: 700px;
-
 }
 
-
 .elsewhere-links {
-
     display: flex;
 
     flex-wrap: wrap;
 
     gap: 15px;
-
 }
 
-
 .elsewhere-links a {
+    border:
+        1px solid var(--gold);
 
-    border: 1px solid var(--gold);
-
-    padding: 15px 25px;
+    padding:
+        15px 25px;
 
     color: var(--paper);
 
     text-decoration: none;
 
-    transition: all .2s;
-
+    transition:
+        background .2s ease,
+        color .2s ease;
 }
-
 
 .elsewhere-links a:hover {
+    background:
+        var(--gold);
 
-    background: var(--gold);
-
-    color: var(--night);
-
+    color:
+        var(--night);
 }
+
+
 /* --------------------------------
-   LOOSE THREADS
+   ELSEWHERE PATCH
 -------------------------------- */
 
-.links {
-
-    position: relative;
-
-}
-
-
-.label-threads {
+.links-patch {
+    width: 150px;
 
     position: absolute;
 
-    width: 100%;
+    right: -80px;
+    bottom: 80px;
 
-    height: 500px;
-
-    left: 0;
-
-    top: -20px;
-
-    pointer-events: none;
-
-    z-index: 0;
-
-}
-
-
-.thread-path {
-
-    fill: none;
-
-    stroke: var(--red);
-
-    stroke-width: 2;
-
-    stroke-linecap: round;
-
-    opacity: .75;
-
-    stroke-dasharray: 6 7;
+    transform:
+        rotate(-7deg);
 
     animation:
-        thread-drift 8s ease-in-out infinite;
-
+        elsewhere-patch-float 12s ease-in-out infinite;
 }
 
+.links-patch::after {
+    content: "";
 
-.thread-b {
+    position: absolute;
 
-    animation-delay: -2s;
+    inset: 5px;
 
-    stroke: var(--gold);
-
+    border:
+        2px dashed
+        rgba(184,146,80,.7);
 }
 
-
-.thread-c {
-
-    animation-delay: -5s;
-
-}
-
-
-@keyframes thread-drift {
-
+@keyframes elsewhere-patch-float {
     0%,
     100% {
-
         transform:
-            translate(0, 0)
-            rotate(0deg);
-
+            rotate(-7deg)
+            translateY(0);
     }
 
     50% {
-
         transform:
-            translate(3px, -5px)
-            rotate(.5deg);
-
+            rotate(-3deg)
+            translateY(-8px);
     }
-
-}
-.fabric-label {
-
-    transform-origin: 50% 10%;
-
-    animation:
-        cloth-breathe 7s ease-in-out infinite;
-
-}
-
-
-.label-writing {
-
-    animation-delay: -1s;
-
-}
-
-
-.label-art {
-
-    animation-delay: -4s;
-
-}
-
-
-.label-code {
-
-    animation-delay: -2.5s;
-
-}
-
-
-@keyframes cloth-breathe {
-
-    0%,
-    100% {
-
-        margin-top: 0;
-
-    }
-
-    50% {
-
-        margin-top: 3px;
-
-    }
-
 }
 
 
@@ -1578,23 +1046,44 @@ h1 {
 -------------------------------- */
 
 footer {
+    border-top:
+        1px solid #35382f;
 
-    border-top: 1px solid #35382f;
-
-    padding: 30px 5vw;
+    padding:
+        30px 5vw;
 
     display: flex;
 
     justify-content: space-between;
 
-    color: #777a69;
+    color:
+        #777a69;
 
     font-size: 10px;
 
     letter-spacing: .1em;
-
 }
 
+
+/* --------------------------------
+   REDUCED MOTION
+-------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+    }
+}
 
 
 /* --------------------------------
@@ -1604,101 +1093,184 @@ footer {
 @media (max-width: 750px) {
 
     header {
+        width: 90vw;
 
-        padding: 25px 0;
-
+        padding:
+            22px 0;
     }
-
 
     nav {
-
         gap: 15px;
-
     }
 
+
+    /* hero */
 
     .hero {
+        min-height:
+            760px;
 
-        min-height: 800px;
-
+        align-items:
+            flex-start;
     }
-
 
     .hero-copy {
-
         width: 100%;
 
-        align-self: flex-start;
-
-        padding-top: 100px;
-
+        padding-top:
+            90px;
     }
-
 
     h1 {
-
-        font-size: 25vw;
-
+        font-size:
+            23vw;
     }
 
 
-    .embroidery-main {
+    /* hero patch */
 
-        width: 260px;
+    .hero-patch {
+        width: 180px;
 
-        height: 350px;
-
-        right: -20px;
-
-        top: 42%;
-
-        opacity: .8;
-
+        right: -25px;
+        top: 52%;
     }
 
 
-    .work-link {
+    /* work */
 
-        grid-template-columns:
-            40px
-            1fr
-            30px;
+    .work {
+        width: 85vw;
 
-        gap: 10px;
+        padding:
+            100px 0;
+    }
 
+    .section-heading h2 {
+        font-size:
+            35px;
+    }
+
+    .links {
+        min-height:
+            auto;
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        gap:
+            35px;
+
+        margin-top:
+            50px;
     }
 
 
-    .work-description {
+    /*
+       On mobile the labels become a normal
+       readable sequence.
+    */
 
-        display: none;
+    .fabric-label {
+        position:
+            relative;
 
+        left:
+            auto;
+
+        right:
+            auto;
+
+        top:
+            auto;
+
+        width:
+            100%;
+
+        min-height:
+            220px;
+
+        transform:
+            none !important;
+
+        animation:
+            none;
     }
 
+    .fabric-label:hover {
+        transform:
+            translateY(-7px) !important;
+    }
+
+
+    /* hide decorative thread on small screens */
+
+    .label-threads {
+        display:
+            none;
+    }
+
+
+    .work-patch {
+        width:
+            110px;
+
+        right:
+            -25px;
+
+        top:
+            70px;
+    }
+
+
+    /* about */
 
     .about {
+        grid-template-columns:
+            1fr;
 
-        grid-template-columns: 1fr;
+        padding:
+            80px 10vw;
 
-        padding: 80px 10vw;
-
+        gap:
+            50px;
     }
-
 
     .about-text h2 {
-
-        font-size: 55px;
-
+        font-size:
+            55px;
     }
 
+
+    /* elsewhere */
+
+    .elsewhere {
+        padding:
+            100px 0;
+    }
+
+    .links-patch {
+        width:
+            100px;
+
+        right:
+            -25px;
+
+        bottom:
+            40px;
+    }
+
+
+    /* footer */
 
     footer {
+        flex-direction:
+            column;
 
-        flex-direction: column;
-
-        gap: 10px;
-
+        gap:
+            10px;
     }
-
 }
-
