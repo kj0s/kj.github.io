@@ -47,21 +47,20 @@ body::before {
 
     pointer-events: none;
 
-    opacity: .12;
+    opacity: .20;
 
     z-index: 50;
 
     background-image:
         repeating-linear-gradient(
             90deg,
-            transparent 0px,
+            transparent 0,
             transparent 3px,
             rgba(220,210,170,.12) 4px
         ),
-
         repeating-linear-gradient(
             0deg,
-            transparent 0px,
+            transparent 0,
             transparent 3px,
             rgba(220,210,170,.08) 4px
         );
@@ -335,6 +334,7 @@ h1 {
 
 .work {
     position: relative;
+    isolation: isolate;
 
     width: min(1100px, 85vw);
 
@@ -345,18 +345,14 @@ h1 {
     color: var(--night);
 }
 
-
-/*
-   A paper/fabric sheet behind
-   the entire work section.
-*/
+/* paper */
 
 .work::before {
     content: "";
 
     position: absolute;
 
-    z-index: -1;
+    z-index: -2;
 
     left: -10vw;
     right: -10vw;
@@ -364,14 +360,10 @@ h1 {
     top: 0;
     bottom: 0;
 
-    background:
-        var(--paper);
-
-    opacity: .98;
+    background: var(--paper);
 }
 
-
-/* subtle paper grain */
+/* paper grain */
 
 .work::after {
     content: "";
@@ -388,14 +380,22 @@ h1 {
 
     pointer-events: none;
 
-    opacity: .12;
+    opacity: .25;
 
     background:
         repeating-linear-gradient(
             0deg,
-            transparent 0px,
+            transparent 0,
+            transparent 4px,
+            rgba(70,50,25,.10) 5px,
+            transparent 6px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
             transparent 5px,
-            rgba(70,50,25,.12) 6px
+            rgba(70,50,25,.06) 6px,
+            transparent 7px
         );
 }
 
@@ -491,41 +491,43 @@ h1 {
 
 .links {
     position: relative;
+    isolation: isolate;
 
     margin-top: 75px;
 
     min-height: 760px;
-
-    isolation: isolate;
 }
+
+/* large woven pattern */
 
 .links::before {
     content: "";
 
     position: absolute;
 
-    inset: -30px;
-
     z-index: -1;
+
+    inset: -40px;
 
     pointer-events: none;
 
     opacity: .35;
 
     background:
-        linear-gradient(
+        repeating-linear-gradient(
             90deg,
-            rgba(135,61,53,.08) 1px,
-            transparent 1px
+            transparent 0,
+            transparent 39px,
+            rgba(135,61,53,.12) 40px,
+            transparent 41px
         ),
-        linear-gradient(
+        repeating-linear-gradient(
             0deg,
-            rgba(135,61,53,.08) 1px,
-            transparent 1px
+            transparent 0,
+            transparent 39px,
+            rgba(184,146,80,.12) 40px,
+            transparent 41px
         );
-
-    background-size:
-        80px 80px;
 }
 .links::after {
     content: "";
