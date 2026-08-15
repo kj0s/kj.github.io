@@ -1,21 +1,7 @@
-const embroidery = document.querySelector(".embroidery-main");
-
-document.addEventListener("mousemove", (event) => {
-
-    const x =
-        (event.clientX / window.innerWidth - 0.5);
-
-    const y =
-        (event.clientY / window.innerHeight - 0.5);
-
-    embroidery.style.transform =
-        `translate(${x * 12}px, ${y * 12}px) rotate(4deg)`;
-
-});
-
 const floatingThings = document.querySelectorAll(
-    ".embroidery-main, .fabric-label"
+    ".fabric-label, .floating-patch"
 );
+
 
 document.addEventListener("mousemove", (event) => {
 
@@ -28,8 +14,17 @@ document.addEventListener("mousemove", (event) => {
 
     floatingThings.forEach((thing, index) => {
 
+        /*
+         * Keep the movement extremely subtle.
+         * We don't want the website to feel like
+         * everything is floating in space.
+         */
+
         const strength =
-            index === 0 ? 8 : 3;
+            thing.classList.contains("fabric-label")
+                ? 3
+                : 2;
+
 
         const x =
             mouseX * strength;
