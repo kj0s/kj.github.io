@@ -77,13 +77,6 @@ header {
 
     z-index: 100;
 
-    width: 100%;
-
-    background: rgba(23,25,20,.92);
-    backdrop-filter: blur(4px);
-}
-
-.header-inner {
     width: min(1300px, 90vw);
 
     margin: auto;
@@ -93,6 +86,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    background: rgba(23,25,20,.92);
+    backdrop-filter: blur(4px);
+
+    box-shadow: 0 0 0 100vmax rgba(23,25,20,.92);
 }
 
 .label {
